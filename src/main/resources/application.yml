@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: Login Attempts Tracker
+  
+  # JPA/Hibernate Configuration
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  
+  # H2 Database Configuration
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  # Thymeleaf Configuration
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Application Security Configuration
+app:
+  security:
+    # Maximum number of failed login attempts before account lock
+    max-failed-attempts: 5
+    # Duration in minutes for which account remains locked
+    lock-duration-minutes: 30
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.logintracker: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

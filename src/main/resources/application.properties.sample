@@ -1,0 +1,40 @@
+# This file contains sample application properties (alternative to application.yml)
+# To use this instead of application.yml, rename this to application.properties
+# and delete or rename application.yml
+
+# Application Name
+spring.application.name=Login Attempts Tracker
+
+# JPA/Hibernate Configuration
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+# H2 Database Configuration
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# H2 Console (access at http://localhost:8080/h2-console)
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# Thymeleaf Configuration
+spring.thymeleaf.cache=false
+spring.thymeleaf.mode=HTML
+spring.thymeleaf.encoding=UTF-8
+
+# Server Configuration
+server.port=8080
+server.servlet.context-path=/
+
+# Application Security Configuration
+app.security.max-failed-attempts=5
+app.security.lock-duration-minutes=30
+
+# Logging Configuration
+logging.level.root=INFO
+logging.level.com.logintracker=DEBUG
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
